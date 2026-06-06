@@ -1,0 +1,15 @@
+README.md
+pom.xml
+src/main/java/com/cypcode/todo/api/ApiUtil.java
+src/main/java/com/cypcode/todo/api/TagsApi.java
+src/main/java/com/cypcode/todo/api/TodosApi.java
+src/main/java/com/cypcode/todo/model/ApiError.java
+src/main/java/com/cypcode/todo/model/ApiErrorFieldErrorsInner.java
+src/main/java/com/cypcode/todo/model/BulkDeleteTodosRequest.java
+src/main/java/com/cypcode/todo/model/CreateTodoRequest.java
+src/main/java/com/cypcode/todo/model/PatchTodoRequest.java
+src/main/java/com/cypcode/todo/model/Priority.java
+src/main/java/com/cypcode/todo/model/Todo.java
+src/main/java/com/cypcode/todo/model/TodoPage.java
+src/main/java/com/cypcode/todo/model/TodoStats.java
+src/main/java/com/cypcode/todo/model/UpdateTodoRequest.java

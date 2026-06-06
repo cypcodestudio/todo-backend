@@ -1,0 +1,196 @@
+package com.cypcode.todo.model;
+
+import java.net.URI;
+import java.util.Objects;
+import com.cypcode.todo.model.Priority;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import java.time.LocalDate;
+import java.util.LinkedHashSet;
+import java.util.Set;
+import org.springframework.format.annotation.DateTimeFormat;
+import java.time.OffsetDateTime;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.*;
+import io.swagger.v3.oas.annotations.media.Schema;
+
+
+import java.util.*;
+import jakarta.annotation.Generated;
+
+/**
+ * PatchTodoRequest
+ */
+
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2026-06-06T11:21:33.992061+02:00[Africa/Johannesburg]", comments = "Generator version: 7.4.0")
+public class PatchTodoRequest {
+
+  private String title;
+
+  private String description = null;
+
+  private Priority priority;
+
+  @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+  private LocalDate dueDate = null;
+
+  @Valid
+  private Set<String> tags;
+
+  public PatchTodoRequest title(String title) {
+    this.title = title;
+    return this;
+  }
+
+  /**
+   * Get title
+   * @return title
+  */
+  @Size(min = 1, max = 255) 
+  @Schema(name = "title", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  @JsonProperty("title")
+  public String getTitle() {
+    return title;
+  }
+
+  public void setTitle(String title) {
+    this.title = title;
+  }
+
+  public PatchTodoRequest description(String description) {
+    this.description = description;
+    return this;
+  }
+
+  /**
+   * Get description
+   * @return description
+  */
+  @Size(max = 2000) 
+  @Schema(name = "description", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  @JsonProperty("description")
+  public String getDescription() {
+    return description;
+  }
+
+  public void setDescription(String description) {
+    this.description = description;
+  }
+
+  public PatchTodoRequest priority(Priority priority) {
+    this.priority = priority;
+    return this;
+  }
+
+  /**
+   * Get priority
+   * @return priority
+  */
+  @Valid 
+  @Schema(name = "priority", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  @JsonProperty("priority")
+  public Priority getPriority() {
+    return priority;
+  }
+
+  public void setPriority(Priority priority) {
+    this.priority = priority;
+  }
+
+  public PatchTodoRequest dueDate(LocalDate dueDate) {
+    this.dueDate = dueDate;
+    return this;
+  }
+
+  /**
+   * Get dueDate
+   * @return dueDate
+  */
+  @Valid 
+  @Schema(name = "dueDate", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  @JsonProperty("dueDate")
+  public LocalDate getDueDate() {
+    return dueDate;
+  }
+
+  public void setDueDate(LocalDate dueDate) {
+    this.dueDate = dueDate;
+  }
+
+  public PatchTodoRequest tags(Set<String> tags) {
+    this.tags = tags;
+    return this;
+  }
+
+  public PatchTodoRequest addTagsItem(String tagsItem) {
+    if (this.tags == null) {
+      this.tags = new LinkedHashSet<>();
+    }
+    this.tags.add(tagsItem);
+    return this;
+  }
+
+  /**
+   * Get tags
+   * @return tags
+  */
+  
+  @Schema(name = "tags", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  @JsonProperty("tags")
+  public Set<String> getTags() {
+    return tags;
+  }
+
+  @JsonDeserialize(as = LinkedHashSet.class)
+  public void setTags(Set<String> tags) {
+    this.tags = tags;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    PatchTodoRequest patchTodoRequest = (PatchTodoRequest) o;
+    return Objects.equals(this.title, patchTodoRequest.title) &&
+        Objects.equals(this.description, patchTodoRequest.description) &&
+        Objects.equals(this.priority, patchTodoRequest.priority) &&
+        Objects.equals(this.dueDate, patchTodoRequest.dueDate) &&
+        Objects.equals(this.tags, patchTodoRequest.tags);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(title, description, priority, dueDate, tags);
+  }
+
+  @Override
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class PatchTodoRequest {\n");
+    sb.append("    title: ").append(toIndentedString(title)).append("\n");
+    sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
+    sb.append("    dueDate: ").append(toIndentedString(dueDate)).append("\n");
+    sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
+   */
+  private String toIndentedString(Object o) {
+    if (o == null) {
+      return "null";
+    }
+    return o.toString().replace("\n", "\n    ");
+  }
+}
+
